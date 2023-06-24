@@ -36,10 +36,10 @@ function generateAccessToken() {
   
     // Create user object
     const user = {
-      name,
-      email,
-      password,
-      accessToken
+      userName:name,
+      email:email,
+      password:password,
+      acessToken:accessToken
     };
   
     // Store user data in localStorage
@@ -53,17 +53,19 @@ function generateAccessToken() {
     // Show success message
     document.getElementById('error').textContent = '';
     document.getElementById('success').innerHTML = `
-      <p class="success">Signup successful!</p>
+      <p class="success">Successfully Signd Up!</p>
     `;
-  
-    // Redirect to profile page
-    window.location.href = 'profile.html';
+    setTimeout(()=>{
+      // Redirect to profile page
+      window.location.href = 'profile.html';
+    }, 1500)
+    
   }
   
   // Function to check if the user is authenticated
   function isAuthenticated() {
     const user = localStorage.getItem('user');
-    return user && JSON.parse(user).accessToken;
+    return user && JSON.parse(user).acessToken;
   }
   
   // Function to redirect to the signup page if not authenticated
@@ -73,7 +75,7 @@ function generateAccessToken() {
     }
   }
   
-  // Function to redirect to the profile page if authenticated
+//   Function to redirect to the profile page if authenticated
   function redirectToProfile() {
     if (isAuthenticated()) {
       window.location.href = 'profile.html';
@@ -83,12 +85,12 @@ function generateAccessToken() {
   // Function to display user's details on the profile page
   function displayProfile() {
     const user = JSON.parse(localStorage.getItem('user'));
-    let userDataName=document.getElementById('name') ;
-    let userDataEmail=document.getElementById('email');
-    let userDataPassword=document.getElementById('password');
+    let userDataName=document.getElementById('user-name') ;
+    let userDataEmail=document.getElementById('user-email');
+    let userDataPassword=document.getElementById('user-password');
 
-    
-    userDataName.innerHTML=`${user.name}`;
+
+    userDataName.innerHTML=`${user.userName}`;
     userDataEmail.innerHTML=`${user.email}`;
     userDataPassword.innerHTML=`${user.password}`;
   }

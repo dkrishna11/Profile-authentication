@@ -16,8 +16,10 @@ body {
     justify-content: space-around;
   }
 
-  header .right p{
+  header .right a{
     margin: 20px;
+    text-decoration: none;
+    color: white;
   }
   .container {
     width: 700px;
