@@ -83,9 +83,9 @@ function generateAccessToken() {
   // Function to display user's details on the profile page
   function displayProfile() {
     const user = JSON.parse(localStorage.getItem('user'));
-    document.getElementById('name').innerText = `${user.name}`;
-    document.getElementById('email').innerText = `${user.email}`;
-    document.getElementById('password').innerText = `${user.password}`;
+    document.getElementById('name').innerHTML = `${user.name}`;
+    document.getElementById('email').innerHTML = `${user.email}`;
+    document.getElementById('password').innerHTML = `${user.password}`;
   }
   
   // Function to handle logout
