@@ -87,6 +87,7 @@ function generateAccessToken() {
     let userDataEmail=document.getElementById('email');
     let userDataPassword=document.getElementById('password');
 
+    
     userDataName.innerHTML=`${user.name}`;
     userDataEmail.innerHTML=`${user.email}`;
     userDataPassword.innerHTML=`${user.password}`;
